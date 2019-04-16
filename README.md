@@ -1,6 +1,7 @@
 # Women Who Code Seoul<br>처음부터 같이 배우는 자료구조 씨스터즈
 
 이 repo는 2019년 3월부터 6월까지 진행되는 12주간의 자료구조 스터디에서 다룬 코드 저장소입니다.<br>
+스터디에 대한 자료는 [스터디 아카이빙 블로그](https://archivingstudy.tistory.com/category/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EC%8B%9C%EC%8A%A4%ED%84%B0%EC%A6%88%20%2719)에 정리되어 있습니다.
 
 기간: 3/31 ~ 6/16<br>
 시간: 일요일 저녁 6시~8시<br>
