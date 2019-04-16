@@ -12,8 +12,8 @@
 - [week 01] C for Data Structure
 - [week 02] Stack by Array
 - [week 03] Queue by Array
-- [week 04] List (Sorted List & Unsorted List) by Array
-- [week 05] Recursion 
+- [week 04] Recursion
+- [week 05] List (Sorted List & Unsorted List) by Array
 - [week 06] Review
 - [week 07] Linked Structure - (Stack & Queue) 
 - [week 08] Linked Structure - (Sorted List & Unsorted List) 
