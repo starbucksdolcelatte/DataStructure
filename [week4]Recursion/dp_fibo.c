@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void dp_fibo(int n, int * f) {
-	f[1] = 1;
+	f[1] = 0;
 	f[2] = 1;
 	printf("%d %d ", f[1], f[2]);
 	for (int i = 3; i <= n; i++) {
@@ -11,7 +11,7 @@ void dp_fibo(int n, int * f) {
 	printf("\n");
 	return;
 }
-/*
+
 int main() {
 	int num = 15;
 	int* fibArr;
@@ -21,4 +21,3 @@ int main() {
 	dp_fibo(num, fibArr);
 	return 0;
 }
-*/

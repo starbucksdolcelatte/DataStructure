@@ -1,14 +1,22 @@
 #include <stdio.h>
 #define ARR_LEN 15
 int mem_fibo(int n, int * fibArr) {
-	
-	if (n == 1 || n == 2) {
+	if (n == 1) {
+		fibArr[n] = 0;
+		for (int i = 1; i < ARR_LEN + 1; i++)
+			printf("%d ", fibArr[i]);
+		printf("\n");
+		return 0;
+	}
+
+	else if (n == 2) {
 		fibArr[n] = 1;
 		for (int i = 1; i < ARR_LEN + 1; i++)
 			printf("%d ", fibArr[i]);
 		printf("\n");
 		return 1;
 	}
+
 	else if (fibArr[n] > -1) {
 		return fibArr[n];
 	}
