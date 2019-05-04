@@ -4,9 +4,9 @@
 
 void ListInit(struct LinkedList* plist) {
 	plist->numOfItems = 0;
-	plist->head = NULL;
-	plist->last = NULL;
-	plist->cur = NULL;
+	plist->head = NULL; //리스트의 머리를 가리키는 포인터 변수
+	plist->tail = NULL; //리스트의 꼬리를 가리키는 포인터 변수
+	plist->cur = NULL; //저장된 데이터의 조회에 사용되는 포인터 변수
 }
 
 int IsEmpty(struct LinkedList* plist) {
@@ -27,13 +27,13 @@ void UnsortedInsert(struct LinkedList* plist, int data) {
 	newNode->data = data;
 	newNode->next = NULL;
 
-	if (IsEmpty(plist)) {
+	if (IsEmpty(plist)) { //첫번째 노드라면!
 		plist->head = newNode;
-		plist->cur = newNode;
+		plist->tail = newNode;
 	}
-	else {
-		plist->cur->next = newNode;
-		plist->cur = newNode;
+	else { //두번째 이후 노드라면!
+		plist->tail->next = newNode;
+		plist->tail = newNode;
 	}
 	(plist->numOfItems)++;
 }
@@ -78,12 +78,15 @@ int RemoveItem(struct LinkedList* plist, int pdata) {
 		delNode = plist->head;
 		prev = plist->head;
 	}
-	if (delNode->data == pdata) {
+	//첫번째 노드가 삭제할 노드인 경우
+	if (delNode->data == pdata) { 
 		plist->head = plist->head->next;
 		free(delNode);
 		(plist->numOfItems)--;
 		return TRUE;
 	}
+
+	//두번째 이후 노드가 삭제할 노드인 경우
 	else {
 		delNode = delNode->next;
 	}
@@ -100,9 +103,11 @@ int RemoveItem(struct LinkedList* plist, int pdata) {
 				delNode = delNode->next;
 			}
 		}
+		//맨 마지막 노드
 		else {
 			if (delNode->data == pdata) {
 				prev->next = NULL;
+				plist->tail = prev;
 				free(delNode);
 				(plist->numOfItems)--;
 				return TRUE;
@@ -118,17 +123,17 @@ int getFirstItem(struct LinkedList* plist, int* pdata) {
 		return FALSE;
 	}
 	*pdata = plist->head->data;
-	plist->last = plist->head;
+	plist->cur = plist->head;
 	return TRUE;
 }
 
 int getNextItem(struct LinkedList* plist, int* pdata) {
-	if (plist->last->next == NULL) {
+	if (plist->cur->next == NULL) {
 		*pdata = -1;
 		return FALSE;
 	}
-	plist->last = plist->last->next;
-	*pdata = plist->last->data;
+	plist->cur = plist->cur->next;
+	*pdata = plist->cur->data;
 	return TRUE;
 }
 

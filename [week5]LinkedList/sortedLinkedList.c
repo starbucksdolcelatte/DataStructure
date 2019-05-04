@@ -11,6 +11,7 @@ LinkedList.c, LinkedList.h도 필요하다.
 */
 
 /***Sorted***/
+/*
 void SortedInsert(struct LinkedList* plist, int data) {
 	struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
 	struct Node* cur, *prev;
@@ -52,3 +53,4 @@ void SortedInsert(struct LinkedList* plist, int data) {
 	}
 	(plist->numOfItems)++;
 } // end of SortedInsertItem()
+*/
