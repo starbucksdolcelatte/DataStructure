@@ -11,8 +11,8 @@ struct Node {
 
 struct DB_LinkedList {
 	struct Node* head;
+	struct Node* tail;
 	struct Node* cur;
-	struct Node* last;
 	int numOfData;
 };
 
