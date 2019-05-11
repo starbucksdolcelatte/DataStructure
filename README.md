@@ -13,10 +13,10 @@
 - [week 02] Stack by Array
 - [week 03] Queue by Array
 - [week 04] Recursion
-- [week 05] List (Sorted List & Unsorted List) by Array
-- [week 06] Review
-- [week 07] Linked Structure - (Stack & Queue) 
-- [week 08] Linked Structure - (Sorted List & Unsorted List) 
+- [week 05] List(list by array & linked list)
+- [week 06] Review & Midterm
+- [week 07] List 
+- [week 08] Linked Structure - (Stack & Queue) 
 - [week 09] Additional List - (Circular Linked List & Doubly Linked List)
 - [week 10] Binary Tree
 - [week 11] Binary Search Tree
