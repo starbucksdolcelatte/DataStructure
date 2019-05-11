@@ -5,7 +5,7 @@
 
 void ListInit(struct DB_LinkedList *plist) {
 	plist->head = NULL;
-	plist->cur = NULL;
+	plist->tail = NULL;
 	plist->numOfData = 0;
 }
 
@@ -30,12 +30,12 @@ void InsertItem(struct DB_LinkedList* plist, int data) {
 	if (plist->head == NULL) {
 		newNode->prev = NULL;
 		plist->head = newNode;
-		plist->cur = newNode;
+		plist->tail = newNode;
 	}
 	else {
-		plist->cur->next = newNode;
-		newNode->prev = plist->cur;
-		plist->cur = plist->cur->next;
+		plist->tail->next = newNode;
+		newNode->prev = plist->tail;
+		plist->tail = plist->tail->next;
 	}
 	(plist->numOfData)++;
 } // end of InsertItem()
@@ -68,8 +68,20 @@ int RemoveItem(struct DB_LinkedList *plist, int pdata) {
 		return FALSE;
 	}
 
-	delNode = plist->head;  temp = plist->head;
-
+	delNode = plist->head;  
+	temp = plist->head;
+	//첫번째 노드가 삭제할 노드인 경우
+	if (delNode->data == pdata) {
+		plist->head = plist->head->next;
+		plist->head->prev = NULL;
+		free(delNode);
+		(plist->numOfData)--;
+		return TRUE;
+	}
+	//두번째 이후 노드가 삭제할 노드인 경우
+	else {
+		delNode = delNode->next;
+	}
 	while (temp->next != NULL) {
 		if (delNode->data == pdata) {
 			temp->next = delNode->next;
@@ -82,8 +94,9 @@ int RemoveItem(struct DB_LinkedList *plist, int pdata) {
 			delNode = delNode->next;
 		}
 	}
+	// 마지막 노드
 	if (delNode->data == pdata) {
-		delNode->prev = NULL;
+		delNode->prev->next = NULL;
 		free(delNode);
 		return TRUE;
 	}
@@ -94,29 +107,29 @@ int getFirstItem(struct DB_LinkedList* plist, int* pdata) {
 	if (plist->head == NULL) {
 		return FALSE;
 	}
-	plist->last = plist->head;
-	*pdata = plist->last->data;
+	plist->cur = plist->head;
+	*pdata = plist->cur->data;
 
 	return TRUE;
 }
 
 int getNextItem(struct DB_LinkedList* plist, int* pdata) {
-	if (plist->last->next == NULL) {
+	if (plist->cur->next == NULL) {
 		return FALSE;
 	}
 
-	plist->last = plist->last->next;
-	*pdata = plist->last->data;
+	plist->cur = plist->cur->next;
+	*pdata = plist->cur->data;
 
 	return TRUE;
 }
 
 
 int getPrevItem(struct DB_LinkedList * plist, int* pdata) {
-	if (plist->last->prev == NULL) {
+	if (plist->cur->prev == NULL) {
 		return FALSE;
 	}
-	plist->last = plist->last->prev;
-	*pdata = plist->last->data;
+	plist->cur = plist->cur->prev;
+	*pdata = plist->cur->data;
 	return TRUE;
 }
