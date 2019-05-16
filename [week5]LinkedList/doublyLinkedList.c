@@ -82,11 +82,12 @@ int RemoveItem(struct DB_LinkedList *plist, int pdata) {
 	else {
 		delNode = delNode->next;
 	}
-	while (temp->next != NULL) {
+	while (delNode->next != NULL) {
 		if (delNode->data == pdata) {
 			temp->next = delNode->next;
 			delNode->next->prev = temp;
 			free(delNode);
+			(plist->numOfData)--;
 			return TRUE;
 		}
 		else {
@@ -96,8 +97,10 @@ int RemoveItem(struct DB_LinkedList *plist, int pdata) {
 	}
 	// 마지막 노드
 	if (delNode->data == pdata) {
-		delNode->prev->next = NULL;
+		temp->next = NULL;
+		plist->tail = temp;
 		free(delNode);
+		(plist->numOfData)--;
 		return TRUE;
 	}
 	return FALSE;
