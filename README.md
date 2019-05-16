@@ -15,11 +15,11 @@
 - [week 04] Recursion
 - [week 05] List(list by array & linked list)
 - [week 06] Review & Midterm
-- [week 07] List 
+- [week 07] List (Circular Linked List & Doubly Linked List)
 - [week 08] Linked Structure - (Stack & Queue) 
-- [week 09] Additional List - (Circular Linked List & Doubly Linked List)
-- [week 10] Binary Tree
-- [week 11] Binary Search Tree
-- [week 12] Hash
+- [week 09] Binary Tree
+- [week 10] Binary Search Tree
+- [week 11] Hash
+- [week 12] Review & Final Exam
 
 본 스터디는 Fast Campus로부터 장소 후원을 받습니다 :)
