@@ -17,8 +17,8 @@
 - [week 06] Review & Midterm
 - [week 07] List (Circular Linked List & Doubly Linked List)
 - [week 08] Linked Structure - (Stack & Queue) 
-- [week 09] Binary Tree
-- [week 10] Binary Search Tree
+- [week 09] Binary Tree & Binary Search Tree
+- [week 10] Binary Search Tree & AVL Tree
 - [week 11] Hash
 - [week 12] Review & Final Exam
 
