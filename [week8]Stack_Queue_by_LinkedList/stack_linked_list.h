@@ -16,3 +16,4 @@ void StackInit(ListStack * pstack);
 int SIsEmpty(ListStack * pstack);
 void SPush(ListStack * pstack, int data);
 int SPop(ListStack * pstack);
+int SPeek(ListStack * pstack);

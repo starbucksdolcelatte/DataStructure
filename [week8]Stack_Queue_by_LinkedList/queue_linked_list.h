@@ -17,3 +17,4 @@ int Dequeue(ListQueue * pq);
 void Enqueue(ListQueue * pq, int data);
 int QIsEmpty(ListQueue * pq);
 void QueueInit(ListQueue * pq);
+int QPeek(ListQueue * pq);

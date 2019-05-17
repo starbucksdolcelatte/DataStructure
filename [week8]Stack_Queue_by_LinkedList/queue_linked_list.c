@@ -41,3 +41,13 @@ int Dequeue(ListQueue * pq) {
 	free(delNode);
 	return retData;
 }
+
+int QPeek(ListQueue * pq) {
+	int retData;
+	if (QIsEmpty(pq)) {
+		printf("Queue is Empty !!!\n");
+		return -1;
+	}
+	retData = pq->front->data;
+	return retData;
+}
